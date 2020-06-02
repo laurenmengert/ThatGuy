@@ -8,19 +8,21 @@
   <title><%= title %></title>
 </head>
 <body>
-  <nav>
-    <% if (user) { %>
-        <a href="/">#ThatGuy</a>
-        <a href="/about">About</a>
-        <a href="/posts">All Posts</a>
-        <a href="/posts/new">Add Post</a>
-        <a href="/logout">Logout</a>
-      <% } else { %>
-        <a href="/">#ThatGuy</a>
-        <a href="/about">About</a>
-        <a href="/posts">All Posts</a>
-        <a href="/auth/google">Login With Google</a>
-      <% } %>
-    </nav>
+  <header>
+    <nav>
+      <% if (user) { %>
+        <a href="/" id="home-link">#ThatGuy</a>
+        <a href="/about" class="link" >About</a>
+        <a href="/posts" class="link" >All Posts</a>
+        <a href="/posts/new" class="link" >Add Post</a>
+        <a href="/logout" class="link" >Logout</a>
+        <% } else { %>
+          <a href="/" class="link" >#ThatGuy</a>
+          <a href="/about" class="link" >About</a>
+          <a href="/posts" class="link" >All Posts</a>
+          <a href="/auth/google" class="link" >Login With Google</a>
+          <% } %>
+        </nav>
+      </header>
     <main>
-      <h1><%= title %></h1>
+      <h1 class="title"><%= title %></h1>

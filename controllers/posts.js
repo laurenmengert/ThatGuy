@@ -8,7 +8,8 @@ module.exports = {
 }
 
 function index(req, res) {
-    Post.find({}, function(err, posts) {
+    Post.find({}).populate('user', 'name')
+    .exec(function(err, posts) {
         console.log(posts);
         res.render('posts/index', { //file path
             title: 'All Posts', 

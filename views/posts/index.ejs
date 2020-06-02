@@ -1,12 +1,9 @@
 <%- include('../partials/header.ejs') %>
-<table id="list">
-    <tbody>
+<div id="list">
         <% posts.forEach(post => { %>
-        <tr>
-            <td><%= post.content %></td>
-            <td><a href="/posts/<%= post._id %>">DETAILS</a></td>
-        </tr> 
+            <div class="user_post"><%= post.content %></div>
+            <div class="user_name"><%= post.user.name %></div>
+            <div><a href="/posts/<%= post._id %>">DETAILS</a></div><br>
        <% }); %>
-    </tbody>
-</table>
+</div>
 <%- include('../partials/footer.ejs') %> 
