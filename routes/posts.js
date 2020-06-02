@@ -4,6 +4,7 @@ const postsCtrl = require('../controllers/posts');
 
 router.get('/', postsCtrl.index);
 router.get('/new', isLoggedIn, postsCtrl.new);
+router.get('/:id', postsCtrl.show)
 router.post('/', isLoggedIn, postsCtrl.create);
 
 
