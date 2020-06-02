@@ -8,12 +8,18 @@
   <title><%= title %></title>
 </head>
 <body>
-    <nav>
-        <a href="/">HOME</a>
-    <!-- insert nav links for creating a new post/seeing all posts -->
+  <nav>
     <% if (user) { %>
-        <a href="/logout">LOGOUT</a>
+        <a href="/">#ThatGuy</a>
+        <a href="/about">About</a>
+        <a href="/posts">All Posts</a>
+        <a href="/posts/new">Add Post</a>
+        <a href="/logout">Logout</a>
       <% } else { %>
-        <a href="/auth/google">LOGIN WITH GOOGLE</a>
+        <a href="/">#ThatGuy</a>
+        <a href="/about">About</a>
+        <a href="/posts">All Posts</a>
+        <a href="/auth/google">Login With Google</a>
       <% } %>
     </nav>
+    <main>

@@ -1,0 +1,8 @@
+<%- include('../partials/header.ejs') %>
+<form id="add-post-form" method="POST" action="/posts"></form>
+    <label>Post:</label>
+        <textarea name="content" id="" cols="30" rows="10"></textarea><br>
+        <label>Image:</label>
+        <input type="text" name="imageUrl" placeholder="Insert Image URL"><br>
+        <input type="submit" name="Add Post">
+<%- include('../partials/footer.ejs') %> 
