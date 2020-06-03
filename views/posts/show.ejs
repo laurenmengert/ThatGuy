@@ -2,11 +2,26 @@
 <div class="user_post"><%= post.content %></div>
 <br><br>
 <div>
+    <% if(user) { %>
     <form id="add_comment" method="POST" action="/posts/<%= post._id %>">
         <label>Leave A Comment:</label>
         <textarea name="content" cols="30" rows="10"></textarea>
         <input type="submit" value="Add Comment">
     </form>
+<% } else { %>
+    <h3>Please Login To Leave A Comment</h3>
+<% } %>
+</div> 
+<div id="list">
+    <% post.comments.forEach(comment => { %>
+        <div class="user_comment"><%= comment.content %></div>
+        <div class="user_name"><%= comment.user.name %></div>
+       <% }); %>
 </div>
+<% if (comment.user.equals(user && user._id)) { %>
+    <form action="/posts/:id/<%= comment._id %>?_method=DELETE" method="POST">
+        <input type="submit" value=" DELETE">
+      </form>
+
 
 <%- include('../partials/footer.ejs') %> 

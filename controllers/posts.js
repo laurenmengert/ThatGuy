@@ -8,8 +8,7 @@ module.exports = {
 }
 
 function index(req, res) {
-    Post.find({}).populate('user', 'name')
-    .exec(function(err, posts) {
+    Post.find({}).populate('user').exec(function(err, posts) {
         console.log(posts);
         res.render('posts/index', { //file path
             title: 'All Posts', 
@@ -31,13 +30,17 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    Post.findById(req.params.id, function(err, post) {
-        res.render('posts/show', {
+    Post.findById(req.params.id).populate('user').populate('comments.user')
+    .exec(function(err, post) {
+        console.log(post);
+            res.render('posts/show', {
             title: 'Post Detail',
             post
         })
     })
 }
+
+
 
 
 // function index(req, res) {

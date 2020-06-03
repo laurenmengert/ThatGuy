@@ -1,6 +1,7 @@
 <%- include('../partials/header.ejs') %>
 <div id="list">
         <% posts.forEach(post => { %>
+            <img src="<%= post.imageUrl %>" alt="">
             <div class="user_post"><%= post.content %></div>
             <div class="user_name"><%= post.user.name %></div>
             <div><a href="/posts/<%= post._id %>">DETAILS</a></div><br>

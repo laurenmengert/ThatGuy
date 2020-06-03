@@ -11,13 +11,13 @@
   <header>
     <nav>
       <% if (user) { %>
-        <a href="/" id="home-link">#ThatGuy</a>
+        <a href="/" class="home-link">#ThatGuy</a>
         <a href="/about" class="link" >About</a>
         <a href="/posts" class="link" >All Posts</a>
         <a href="/posts/new" class="link" >Add Post</a>
         <a href="/logout" class="link" >Logout</a>
         <% } else { %>
-          <a href="/" class="link" >#ThatGuy</a>
+          <a href="/" class="home-link" >#ThatGuy</a>
           <a href="/about" class="link" >About</a>
           <a href="/posts" class="link" >All Posts</a>
           <a href="/auth/google" class="link" >Login With Google</a>

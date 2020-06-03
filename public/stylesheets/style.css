@@ -23,6 +23,9 @@ header {
 nav a {
   color: #00B7FF;
   text-decoration: none;
+  background-color: blueviolet;
+  margin: 20px;
+  padding:10px;
 
 }
 
@@ -34,10 +37,16 @@ nav {
   align-items: center;
 }
 
-.link:first-child {
-  color: black;
-  position: fixed;
-  left: 15px;
+nav a:last-child {
+  margin-right: 30px;
+}
+
+.home-link {
+  color: white;
+  position: absolute;
+  left: 30px;
+  background-color: blueviolet;
+  margin: 0;
 }
 
 
