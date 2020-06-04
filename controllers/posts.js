@@ -6,6 +6,7 @@ module.exports = {
     create,
     show,
     edit,
+    update,
     delete: delPost
 }
 
@@ -24,12 +25,12 @@ function newPost(req, res) {
 }
 
 function create(req, res) {
-    if(!req.body.length){
-        console.log('req.body:', req.body)
+    if(!req.body.content && !req.body.imageUrl){
+        console.log('req.body 1:', req.body)
         res.render('posts/new', {title: 'Please Enter Input'});
     }  else {
         req.body.user = req.user
-        console.log('req.boyd:',req.body);
+        console.log('req.body 2:',req.body);
         Post.create(req.body, function(err) {
         res.redirect('/posts'); //url path
         
@@ -54,6 +55,13 @@ function edit(req, res) {
             title: 'Edit Post',
             post
         })
+    })
+}
+
+function update(req, res) {
+    Post.findByIdAndUpdate(req.params.id, req.body, function(err) {
+        console.log(req.body)
+        res.redirect('/posts');
     })
 }
 
