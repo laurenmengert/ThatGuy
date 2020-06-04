@@ -27,7 +27,7 @@ function create(req, res) {
     if(!req.body.length){
         console.log('req.body:', req.body)
         res.render('posts/new', {title: 'Please Enter Input'});
-    } else {
+    }  else {
         req.body.user = req.user
         console.log('req.boyd:',req.body);
         Post.create(req.body, function(err) {
