@@ -5,14 +5,15 @@
     <% if(user) { %>
     <form id="add_comment" method="POST" action="/posts/<%= post._id %>">
         <label>Leave A Comment:</label>
-        <textarea name="content" cols="30" rows="10"></textarea>
-        <input type="submit" value="Add Comment">
+        <textarea name="content" cols="50" rows="10"></textarea><br>
+        <input type="submit" value="ADD COMMENT">
     </form>
 <% } else { %>
     <h3>Please Login To Leave A Comment</h3>
 <% } %>
 </div> 
 <div id="list">
+    <% if(post.comments.length) { %>
     <% post.comments.forEach(comment => { %>
         <div class="user_comment"><%= comment.content %></div>
         <div class="user_name"><%= comment.user.name %></div>
@@ -22,6 +23,9 @@
               </form>
             <% } %>
        <% }); %>
+    <% } else { %>
+        <h3>No Comments Yet</h3>
+    <% } %>
 </div>
 
 <%- include('../partials/footer.ejs') %> 

@@ -4,12 +4,14 @@ module.exports = {
     index,
     new: newPost,
     create,
-    show
+    show,
+    edit,
+    delete: delPost
 }
 
 function index(req, res) {
     Post.find({}).populate('user').exec(function(err, posts) {
-        console.log(posts);
+        // console.log(posts);
         res.render('posts/index', { //file path
             title: 'All Posts', 
             posts,
@@ -22,12 +24,18 @@ function newPost(req, res) {
 }
 
 function create(req, res) {
-    req.body.user = req.user
-    console.log(req.body);
-    Post.create(req.body, function(err) {
+    if(!req.body.length){
+        console.log('req.body:', req.body)
+        res.render('posts/new', {title: 'Please Enter Input'});
+    } else {
+        req.body.user = req.user
+        console.log('req.boyd:',req.body);
+        Post.create(req.body, function(err) {
         res.redirect('/posts'); //url path
-    })
-}
+        
+        })
+    }
+}   
 
 function show(req, res) {
     Post.findById(req.params.id).populate('user').populate('comments.user')
@@ -40,6 +48,20 @@ function show(req, res) {
     })
 }
 
+function edit(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+        res.render('posts/edit', {
+            title: 'Edit Post',
+            post
+        })
+    })
+}
+
+function delPost(req, res) {
+    Post.findByIdAndRemove(req.params.id, function(err) {
+        res.redirect('/posts');
+    })
+}
 
 
 

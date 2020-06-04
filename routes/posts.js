@@ -5,7 +5,10 @@ const postsCtrl = require('../controllers/posts');
 router.get('/', postsCtrl.index);
 router.get('/new', isLoggedIn, postsCtrl.new);
 router.get('/:id', postsCtrl.show)
+router.get('/:id/edit', isLoggedIn, postsCtrl.edit)
 router.post('/', isLoggedIn, postsCtrl.create);
+router.delete('/:id', isLoggedIn, postsCtrl.delete);
+
 
 
 function isLoggedIn(req, res, next) {
