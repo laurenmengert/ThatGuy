@@ -17,7 +17,6 @@ function create(req, res) {
     })
 }
 
-
 function delComment(req, res) {
     Post.findOne({'comments._id': req.params.id}, function(err, post) {
       post.comments.id(req.params.id).remove();

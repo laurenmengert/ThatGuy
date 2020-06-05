@@ -13,8 +13,8 @@
 <% } %>
 </div> 
 <div id="list">
-    <% if(post.comments.length) { %>
-    <% post.comments.forEach(comment => { %>
+    <% if(comments.length) { %>
+    <% comments.forEach(comment => { %>
         <div class="user_comment"><%= comment.content %></div>
         <div class="user_name"><%= comment.user.name %></div>
         <% if (comment.user.equals(user && user._id)) { %>
