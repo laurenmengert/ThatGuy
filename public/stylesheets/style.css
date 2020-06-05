@@ -30,7 +30,7 @@ nav a {
 
 }
 
-nav {
+.navbar {
   display: flex;
   justify-content: flex-end;
   background-color: pink;
@@ -43,6 +43,7 @@ nav a:last-child {
 }
 
 .home-link {
+  font-size: 20px;
   color: white;
   position: absolute;
   left: 30px;
