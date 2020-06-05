@@ -10,19 +10,18 @@
 </head>
 <body>
   <header>
-    <nav>
+    <nav id="navbar">
       <% if (user) { %>
-
-        <a href="/" class="home-link">#ThatGuy</a>
-        <a href="/about" class="link" >About</a>
-        <a href="/posts" class="link" >All Posts</a>
-        <a href="/posts/new" class="link" >Add Post</a>
-        <a href="/logout" class="link" >Logout</a>
+        <div><a href="/" class="home-link">#ThatGuy</a></div>
+        <div><a href="/about" class="link" >About</a></div>
+        <div><a href="/posts" class="link" >All Posts</a></div>
+        <div><a href="/posts/new" class="link" >Add Post</a></div>
+        <div><a href="/logout" class="link" >Logout</a></div>
       <% } else { %>
-        <a href="/" class="home-link" >#ThatGuy</a>
-        <a href="/about" class="link" >About</a>
-        <a href="/posts" class="link" >All Posts</a>
-        <a href="/auth/google" class="link" >Login With Google</a>
+        <div><a href="/" class="home-link" >#ThatGuy</a></div>
+        <div><a href="/about" class="link" >About</a></div>
+        <div><a href="/posts" class="link" >All Posts</a></div>
+        <div><a href="/auth/google" class="link" >Login With Google</a></div>
         <% } %>
     </nav>
   </header>
