@@ -3,7 +3,7 @@
 <div id="list">
     <% if(posts.length) { %>
         <% posts.forEach(post => { %>
-            <img src="<%= post.imageUrl %>">
+            <img src="<%= post.imageUrl %>" height="400" width="auto">
             <div class="user_post"><%= post.content %></div>
             <div class="user_name"><%= post.user.name %></div>
             <div><a href="/posts/<%= post._id %>">DETAILS</a></div><br>
