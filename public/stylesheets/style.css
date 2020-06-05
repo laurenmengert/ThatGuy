@@ -27,17 +27,15 @@ nav a {
   background-color: blueviolet;
   margin: 20px;
   padding:10px;
-
 }
 
-.navbar {
+nav {
   display: flex;
   justify-content: flex-end;
   background-color: pink;
   height: 100%;
   align-items: center;
 }
-
 nav a:last-child {
   margin-right: 30px;
 }
