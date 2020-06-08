@@ -3,17 +3,17 @@
 <div id="list">
     <% if(posts.length) { %>
         <% posts.forEach(post => { %>
-            <img src="<%= post.imageUrl %>" class="img" height="auto" max-width="60%">
+            <img src="<%= post.imageUrl %>" class="img">
             <div class="user-post"><%= post.content %></div>
+            <div class="user-name"><%= post.user.name %></div>
             <div>
                 <div ><a class="post-links" href="/posts/<%= post._id %>">Details</a></div>
                 <% if (post.user.equals(user && user._id)) { %>
                 <div><a class="post-links" href="/posts/<%= post._id%>/edit">Edit</a></div>
                 <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-                    <div><input id="del-btn" class="post-btns" type="submit" value=" Delete"></div>
+                    <div><input class="btn" type="submit" value=" Delete"></div>
                 </form>
-                <div><%= post.user.name %></div>
-            </div><br>
+            </div>
             <% }; %>
         <% }); %>
     <% } %>

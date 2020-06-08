@@ -1,8 +1,8 @@
 <%- include('../partials/header.ejs') %>
 <form id="add-post-form" method="POST" action="/posts">
         <textarea class="text-box" name="content" cols="50" rows="10"></textarea></textarea><br>
-        <label>Image:</label>
-        <input type="text" name="imageUrl" placeholder="Insert Image URL"><br>
-        <input type="submit" value="Add Post">
 </form>
+<label class="label">Image:</label>
+<input class="img-url" type="text" name="imageUrl" placeholder="Insert Image URL"><br><br>
+<input class="btn" type="submit" value="Add Post">
 <%- include('../partials/footer.ejs') %> 
