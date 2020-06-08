@@ -1,12 +1,12 @@
 <%- include('../partials/header.ejs') %>
-<img src="<%= post.imageUrl %>" height="400" width="auto">
-<div class="user_post"><%= post.content %></div>
+<img src="<%= post.imageUrl %>" class="img" height="auto" width="60%">
+<div class="user-post"><%= post.content %></div>
 <br><br>
 <div>
     <% if(user) { %>
-    <form id="add_comment" method="POST" action="/posts/<%= post._id %>">
-        <label>Leave A Comment:</label>
-        <textarea name="content" cols="50" rows="10"></textarea><br>
+    <form id="add-comment" method="POST" action="/posts/<%= post._id %>">
+        <label>Leave A Comment</label><br>
+        <textarea class="text-box" name="content" cols="50" rows="10"></textarea><br>
         <input type="submit" value="ADD COMMENT">
     </form>
 <% } else { %>
