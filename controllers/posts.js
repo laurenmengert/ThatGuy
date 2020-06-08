@@ -12,7 +12,6 @@ module.exports = {
 
 function index(req, res) {
     Post.find({}).populate('user').sort('-createdAt').exec(function(err, posts) {
-        // console.log(posts);
         res.render('posts/index', { //file path
             title: 'All Posts', 
             posts,
