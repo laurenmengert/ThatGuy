@@ -25,11 +25,9 @@ function newPost(req, res) {
 
 function create(req, res) {
     if(!req.body.content && !req.body.imageUrl){
-        console.log('req.body 1:', req.body)
         res.render('posts/new', {title: 'Please Enter Input'});
     }  else {
         req.body.user = req.user
-        console.log('req.body 2:',req.body);
         Post.create(req.body, function(err) {
         res.redirect('/posts'); //url path
         
