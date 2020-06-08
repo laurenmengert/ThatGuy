@@ -6,7 +6,7 @@ const userSchema = new Schema({
     name: String,
     email: String,
     avatar: String,
-    googleId: String //don't pass to client/browser
+    googleId: String
 },
 {
     timestamps: true

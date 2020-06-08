@@ -9,7 +9,6 @@ router.get('/more', function(req, res) {
   res.render('posts/more', {
       title: 'More Info'
   })
-}
-);
+});
 
 module.exports = router;

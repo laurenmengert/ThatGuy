@@ -12,7 +12,7 @@ module.exports = {
 
 function index(req, res) {
     Post.find({}).populate('user').sort('-createdAt').exec(function(err, posts) {
-        res.render('posts/index', { //file path
+        res.render('posts/index', { 
             title: 'All Posts', 
             posts,
         }); 
@@ -37,21 +37,6 @@ function create(req, res) {
     }
 }   
 
-
-// function show(req, res) {
-//     Post.findById(req.params.id).populate('user').populate('comments.user')
-//     .exec(function(err, post) {
-//         let comments = post.comments.sort(function(commentOne, commentTwo) {
-//             return commentOne.createdAt - commentTwo.createdAt
-//         });
-//         res.render('posts/show', {
-//             title: 'Post Detail',
-//             post,
-//             comments
-//         });
-//     });
-// }
-
 function show(req, res) {
     Post.findById(req.params.id).populate('user').populate('comments.user')
     .exec(function(err, post) {
@@ -75,7 +60,6 @@ function edit(req, res) {
 
 function update(req, res) {
     Post.findByIdAndUpdate(req.params.id, req.body, function(err) {
-        console.log(req.body)
         res.redirect('/posts');
     })
 }
