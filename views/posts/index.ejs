@@ -5,16 +5,16 @@
         <% posts.forEach(post => { %>
             <img src="<%= post.imageUrl %>" class="img">
             <div class="user-post"><%= post.content %></div>
-            <div class="user-name"><%= post.user.name %></div>
-            <div>
+            <div class="post-links-container">
                 <div ><a class="post-links" href="/posts/<%= post._id %>">Details</a></div>
                 <% if (post.user.equals(user && user._id)) { %>
-                <div><a class="post-links" href="/posts/<%= post._id%>/edit">Edit</a></div>
-                <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-                    <div><input class="btn" type="submit" value=" Delete"></div>
-                </form>
+                    <div><a class="post-links" href="/posts/<%= post._id%>/edit">Edit</a></div>
+                    <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+                        <div><input class="btn" type="submit" value=" Delete"></div>
+                    </form>
+                    <% }; %>
+                <div class="user-name"><%= post.user.name %></div>
             </div>
-            <% }; %>
         <% }); %>
     <% } %>
 </div>
