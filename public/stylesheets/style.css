@@ -92,6 +92,16 @@ nav {
 .post-links {
   font-size: 3.5vmin;
   text-decoration: none;
+  color: white;
+  background-color: rgba(13, 112, 140, 0.9);
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.post-links:hover {
+  color: rgba(13, 112, 140, 1);
+  background-color:rgba(10, 255, 247, 0.7);
+  border: 2px solid rgba(13, 112, 140, 0.9)
 }
 
 .btn{
@@ -130,6 +140,16 @@ nav {
   font-size: 3.5vmin;
 }
 
+.post-links-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.post-links-container > * {
+  margin: 0 10px
+}
+
 .user-comment {
   background-color: rgba(214, 255, 254, 1);
   margin: 2% auto;
@@ -141,18 +161,16 @@ nav {
 }
 
 .user-name {
-  color: white;
-  background-color: rgba(13, 112, 140, 0.9);
-  width: 50%;
-  padding: .3em .2em;
-  margin: auto;
+  color :rgba(13, 112, 140, 0.9);
+  background-color: white;
+  padding: .5em;
+  /* background-color: rgba(13, 112, 140, 0.9); */
 }
 
 .text-box {
   max-width: 70%;
   border: 2px solid rgba(13, 112, 140, 0.9);
   border-radius: 5px;
-
 }
 
 .drop-btn {
@@ -170,11 +188,9 @@ nav {
     padding: 1.5rem;
     margin: .5em;
   }
-
   nav a {
     margin: 10px;
   }
-  
   .img {
     max-width: 80%;
     height: auto;
